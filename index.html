@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Timer de estilo Pomodoro com opções de som ambiente.">
+
+  <title>Focus Timer V2</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./assets/img/img-sounds/fire.svg" type="image">
+  <script type="module" src="./js/main.js" defer></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <div class="page">
+    <main class="timer">
+      <section class="time-counter">
+        
+          <span class="minutes" contenteditable="true">00</span>
+          :
+          <span class="seconds">00</span>
+        
+      </section>
+      <section class="controls">
+        <button class="play-timer 
+          ph ph-play-circle"
+          data-action="play-timer">
+          <div class="sr-only">Botão iniciar temporizador.</div>
+        </button>
+        <button class="pause-timer 
+        ph ph-pause-circle"
+        data-action="play-timer">
+        <div class="sr-only">Botão pausar temporizador.</div>
+        </button>
+        <button class="stop-timer 
+          ph ph-stop-circle"
+          data-action="stop-timer">
+          <div class="sr-only">Botão parar temporizador.</div>
+        </button>
+        <button class="add-time 
+          ph ph-plus-circle"
+          data-action="add-time">
+          <div class="sr-only">Botão acrescentar tempo ao timer.</div>
+        </button>
+        <button class="decrease-time 
+          ph ph-minus-circle"
+          data-action="decrease-time">
+          <div class="sr-only">Botão decrementar tempo do timer.</div>
+        </button>
+      </section>
+    </main>
+
+    <aside class="sounds">
+      <button class="sound-nature
+        ph ph-tree"
+        data-action="sound-nature">
+        <div class="sr-only">Botão ativar/desativar som ambiente de natureza.</div>
+      </button>
+      <button class="sound-rain
+        ph ph-cloud-rain"
+        data-action="sound-rain">
+        <div class="sr-only">Botão ativar/desativar som ambiente de chuva.</div>
+      </button>
+      <button class="sound-market
+        ph ph-storefront"
+        data-action="sound-market">
+        <div class="sr-only">Botão ativar/desativar som ambiente de mercado.</div>
+      </button>
+      <button class="sound-fire
+        ph ph-fire"
+        data-action="sound-fire">
+        <div class="sr-only">Botão ativar/desativar som ambiente de fogo.</div>
+      </button>
+    </aside>
+  </div>
+
+  <button class="toggle-light-dark-mode
+  ph ph-moon-stars"
+  data-action="toggle-light-dark-mode">
+  </button>
+</body>
+</html>
