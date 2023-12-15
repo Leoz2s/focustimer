@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: linear-gradient(260deg, white 0%, rgb(38, 160, 190) 100%);
+  --bg-color-dark-mode: linear-gradient(260deg, rgb(36, 110, 112) 0%, black 100%);
+  --bg-sound-button: hsla(240, 9%, 89%, 1);
+  --bg-sound-button-hover: rgb(150, 150, 156);
+  --bg-sound-button-active: hsla(194, 97%, 31%, 1);
+  --bg-sound-button-active-hover: rgb(9, 83, 105);
+  --fc-primary: #323238;
+  --fc-primary-dark-mode: rgba(255, 255, 255, 0.781);
+
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  font-size: 1.6rem;
+
+  background-image: var(--bg-color);
+
+  height: 100vh;
+
+  display: grid;
+  place-items: center;
+}
+
+html.dark-mode body {
+  background-image: var(--bg-color-dark-mode);
+}
+
+.page {
+  display: flex;
+  gap: 19.2rem;
+}
+
+/* timer.css */
+
+.timer {
+  display: grid;
+  align-content: center;
+}
+
+.timer .time-counter {
+  font-size: 12.6rem;
+  font-family: 'Roboto', sans-serif;
+
+  color: var(--fc-primary);
+
+  display: flex;
+  align-items: center;
+}
+
+html.dark-mode .timer .time-counter {
+  color: var(--fc-primary-dark-mode);
+}
+
+.timer .time-counter .minutes:hover {
+  cursor: pointer;
+}
+
+.timer .controls {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.timer .controls button {
+  font-size: 4.8rem;
+  color: var(--fc-primary);
+
+  background: none;
+}
+
+.timer .controls button.play-timer.is-running,
+.timer .controls button.stop-timer:not(.is-running) {
+  color: rgba(0, 0, 0, 0.425);
+}
+
+html.is-running .timer .controls button.play-timer,
+html:not(.is-running) .timer .controls button.pause-timer {
+  display: none;
+}
+
+html.dark-mode .timer .controls button {
+  color: var(--fc-primary-dark-mode);
+}
+
+html.dark-mode .timer .controls button.play-timer.is-running,
+html.dark-mode .timer .controls button.stop-timer:not(.is-running) {
+  color: rgba(255, 255, 255, 0.253);
+}
+
+/* sounds.css */
+.sounds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+.sounds button {
+  width: 13.8rem;
+  height: 15.2rem;
+
+  font-size: 8rem;
+  color: black;
+
+  border-radius: 3rem;
+  background-color: var(--bg-sound-button);
+
+  border: .5rem solid black;
+}
+
+.sounds button:hover {
+  background-color: var(--bg-sound-button-hover);
+}
+
+.sounds button.active-sound {
+  background-color: var(--bg-sound-button-active);
+  color: var(--fc-primary-dark-mode);
+}
+
+.sounds button.active-sound:hover {
+  background-color: var(--bg-sound-button-active-hover);
+}
+
+/* light/dark mode button */
+button.toggle-light-dark-mode {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+
+  font-size: 5rem;
+
+  background: none;
+}
+
+html.dark-mode button.toggle-light-dark-mode {
+  color: var(--fc-primary-dark-mode)
+}
+
+@media(max-width: 1000px) {
+  .page {
+    flex-direction: column;
+  }
+}
